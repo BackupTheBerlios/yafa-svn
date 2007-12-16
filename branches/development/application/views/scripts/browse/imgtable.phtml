@@ -1,0 +1,10 @@
+<?php
+require_once('functions_imgtable.phtml');
+
+if ($this->msg != '') {
+	echo "<p>" . $this->escape($this->msg) . "</p>";
+}
+
+imgTable($this->images, $this);
+
+?>
