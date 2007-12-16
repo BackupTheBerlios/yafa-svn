@@ -1,0 +1,15 @@
+<?php
+require_once('functions_msgtable.phtml');
+require_once('functions_pageing.phtml');
+
+if ($this->msgmsg != '') {
+	echo "<p>" . $this->escape($this->msgmsg) . "</p>\n\n";
+}
+
+pageing($this, $this->page_count, $this->page);
+
+msgTable($this->msgs, $this, true);
+
+pageing($this, $this->page_count, $this->page);
+
+?>

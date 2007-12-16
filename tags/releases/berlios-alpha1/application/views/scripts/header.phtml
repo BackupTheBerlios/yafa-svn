@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>images</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+
+	<link href="/images_main.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="/javascript/menue.js"></script>
+
+</head>
+
+<body>
+
+<a name="top"></a>
+
+<div class="TopBar" id="TopBar">
+	<table cellspacing="0" class="Header" border="0">
+		<tr>
+			<td class="MyLogo">
+				<a href="/"><img src="/images/logo_gamma.gif" height="26" alt="Logo. If you click it, you'll go home" /></a>
+			</td>
+			<td class="Status">
+				Signed in as <a href="/user/details?name=<?php echo $this->escape($this->username); ?>" class="Pale"><?php echo $this->escape($this->realname); ?> (<?php echo $this->escape($this->level); ?>)</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/help/">Help</a> 			
+			</td>
+		</tr>
+		<tr>
+			<td class="Primary">
+		
+				<div id="Navi_bar" class="Navi_bar">
+					<ul class="Navi_buttons">
+
+<?php
+// inserting menu
+	foreach ($this->menu as $side => $row) {
+		if ( ! is_Array($row) ) {
+			// No submenu
+			echo "						<li class=\"no_menu_li\"><span><a href=\"$row\">$side</a></span></li>\n";
+		}
+		else {
+			// With submenu
+			$first = true;
+			foreach ($row as $key => $value) {
+				if ($first) {
+					echo "						<li class=\"menu_li\" id=\"Navi_button_$side\">
+							<!--span-->
+								<a href=\"" . $value . "\">$side</a>
+								<img src=\"/images/site_nav_caret_split_default.png\" width=\"18\" height=\"15\" alt=\"More options\" onclick=\"SwitchMenue('menu_$side');return false;\">
+							<!--/span-->
+							<div class=\"Navi_menu\" id=\"menu_$side\">\n";
+					echo "								<a href=\"$value\"><b>$key</b></a><br>\n";
+					$first = false;
+				}
+				else {
+					echo "								<a href=\"$value\">$key</a><br>\n";
+				}
+			}
+			echo "							</div><script type=\"text/javascript\">	noMenue('menu_$side'); </script>
+						</li>\n";
+		}
+	}
+?>
+				
+					</ul>
+				</div>
+
+			</td>
+
+			<td class="Search">
+				<form action="/browse/search/" method="post">
+					<select name="type" id="type">
+						<option value="" label="All" selected="selected">All</option>
+						<option value="Images" label="Images">Images</option>
+						<option value="Msgs" label="Messages">Messages</option>
+						<option value="Tags" label="Tags">Tags</option>
+					</select>
+					<input name="q" type="text" class="Box" value="Search here">
+					<input value="Search" type="submit" name="Search" />
+				</form>
+			</td>
+
+		</tr>		
+	</table>
+</div>
+
+<?php echo '<div id="Main" >';  ?>
+
+		

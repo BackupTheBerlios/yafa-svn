@@ -1,0 +1,35 @@
+<?php
+
+function msgTable($msgs, $_this, $images = false) {
+	if ($images) {
+		require_once('functions_imgtable.phtml');
+	}
+	
+	if ($msgs == null) {
+		echo 123;
+		return false;
+	}
+	else {
+		foreach ($msgs as $msg) {
+			echo "	<table border=1>\n";
+			echo "	  <tr height=\"10px\"></tr>\n";	
+			echo "	  <tr>\n";
+			echo "		<td>From: " . $_this->escape($msg->sender) . "<br>";
+			echo "Date: " . $_this->escape($msg->date) . "<br>";
+			echo '<b><a href="/browse/msg?q=' . $_this->escape($msg->ID) . '">Subject:</a> ' . $_this->escape($msg->subject) . "</b><br>";
+			if ( isset($msg->score) ) {
+				echo 'Search score: ' . $_this->escape($msg->score);
+			}
+			echo "</td>\n";
+			echo "	  </tr>\n";
+			echo "	</table>\n";
+			
+			if ($images) {
+				imgTable($msg->images, $_this);
+			}
+		}
+		return true;
+	} // if ($obj->msgs == null)
+}
+
+?>

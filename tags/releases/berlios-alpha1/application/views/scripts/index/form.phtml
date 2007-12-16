@@ -1,0 +1,10 @@
+    <h2>Input Form</h2>
+    <?php
+        if ($this->msg != '') {
+            echo "<p>" . $this->escape($this->msg) . "</p>";
+        }
+    ?>
+    <form action="/index/process" method="post">
+    	<p>pic: <?php echo $this->formText('pic', $this->pic, array('size' => 32)); ?> 
+        <?php echo $this->formSubmit('submit'); ?></p>
+    </form>
