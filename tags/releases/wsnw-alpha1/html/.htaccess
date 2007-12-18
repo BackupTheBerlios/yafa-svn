@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php
+
+#AuthType Digest
+#AuthName "Restricted Access"
+#AuthDigestDomain /
+
+#AuthDigestProvider file
+#AuthUserFile /home/zendurl/public_html/y/yafa/digest
+#Require valid-user

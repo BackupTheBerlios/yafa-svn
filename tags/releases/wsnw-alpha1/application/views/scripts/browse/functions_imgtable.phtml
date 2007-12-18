@@ -1,0 +1,44 @@
+<?php
+
+function imgTable($images, $_this) {
+	if ($images == null) {
+		return false;
+	}
+	else {
+		// Table begin
+		echo "		<table border=1>\n";
+		
+		// Table Header
+		
+		// Cell loop
+		$count = 0;
+		echo "		  <tr>\n";
+		foreach ($images as $image) {
+			echo '			<td align="center" valign="bottom"><a href="/browse/image?ID=' .$_this->escape($image->ID). '">';
+			if (isset($image->urlthumb)) {
+				echo '<img src="' . $_this->escape($image->urlthumb) . '"><br>';
+			}
+			echo $_this->escape($image->origfilename) . "</a><br>";
+			foreach ($image->tags as $tag) {
+				echo '<a href="/browse/imgtable?q='.$_this->escape($tag->ID).'">'.$_this->escape($tag->name).'</a> ';
+			}
+			if (isset($image->score)) {
+				echo '<br>Search score: ' . $_this->escape($image->score);
+			}
+			echo "</td>\n";
+			$count++;
+			if ($count == 3) {
+				echo "		  </tr>\n		  <tr>\n";
+				$count = 0;
+			}
+		}
+		echo "		  </tr>\n";
+		
+		// Table end
+		echo "		</table>\n";
+		
+		return true;
+	} // if ($obj->images == null)
+}
+
+?>

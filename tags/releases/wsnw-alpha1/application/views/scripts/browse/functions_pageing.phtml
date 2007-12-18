@@ -1,0 +1,36 @@
+<?php
+
+function pageing($_this, $count, $current_page, $filter = '') {
+	echo "<center><p>";
+	$pages = ceil($count / 100);
+	pageing_printpage($_this, 1, $current_page, $filter);
+	for ($i = -5; $i <= 5; $i++) {
+		$abs_page = $i+$current_page;
+		if ($abs_page > 1 and $abs_page < $pages) {
+			pageing_printpage($_this, $abs_page, $current_page, $filter);
+		}
+	}
+	pageing_printpage($_this, $pages, $current_page, $filter);
+	echo "</p></center>\n\n";
+}
+
+
+function pageing_printpage($_this, $number, $current_page, $filter) {
+	static $lastpage;
+	$url = $_this->me ."?page=" . $number;
+	if ($filter != '') {
+		$url .= "&filter=" & $filter;
+	}
+	if ($lastpage + 1 != $number) {
+		echo "... ";
+	}
+	$lastpage = $number;
+	if ($current_page == $number) {
+		echo "<b>";
+	}
+	echo  "<a href=\"" . $_this->escape($url) . "\">" . $_this->escape($number) . "</a> ";
+	if ($current_page == $number) {
+		echo "</b>";
+	}
+}
+?>
