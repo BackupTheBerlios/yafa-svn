@@ -11,7 +11,7 @@ $configArray = array(
         'adapter' => 'mysqli',
         'params'  => array(
             'host'     => 'localhost',
-            'username' => 'yafa',
+            'username' => 'yafa_yafa',
             'password' => 'Stollentroll',
             'dbname'   => 'yafa_yafa'
         )

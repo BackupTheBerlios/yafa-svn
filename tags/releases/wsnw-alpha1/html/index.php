@@ -1,4 +1,6 @@
 <?php
+set_include_path('/home/yafa/php' . PATH_SEPARATOR . get_include_path());
+
 require_once '../config.php';
 require_once '../application/menu.php';
 
