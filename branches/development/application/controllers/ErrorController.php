@@ -37,7 +37,7 @@ class ErrorController extends Zend_Controller_Action
 		                $log->debug($exception->getMessage() . "\n" .  $exception->getTraceAsString());
 		                               
 		                //Output
-		                $this->view->msg = '<pre>' . $exception->getMessage() . "\n" .  $exception->getTraceAsString() . "\nThe error is logged and will be analysed be the developers.<pre>";
+		                $this->view->msg = '<pre>' . $exception->getMessage() . "\n" .  $exception->getTraceAsString() . "\nThe error is logged and will be analysed by the developers.</pre>";
 		                
 		                break;
                 }
