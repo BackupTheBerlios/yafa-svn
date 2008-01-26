@@ -61,6 +61,33 @@ class DbController extends Zend_Controller_Action
 		$this->indexAction();
     }
     
+    public function viewAction()
+    {
+    	Zend_Controller_Front::getInstance()->getParam('auth')->auth(1);
+    	$id = 	$this->_getParam('id', 0);
+    	// do some validation...
+        if ( $id == 0) {
+        	// Return to Index
+        	$this->_helper->viewRenderer('index');
+        	$this->indexAction();
+        }
+        else {
+        	// Display page
+        	$this->view->id = $id;
+	    	// Only one ID
+	    	$sql = 'SELECT name, body 
+	    			FROM 
+	    				Page 
+	    				INNER JOIN Text on Page.Text_ID = Text.ID
+	    			WHERE Page.ID = ?';
+			$result = $this->db->fetchAll($sql, $id);
+			$this->view->id = $id;
+			$this->view->name = $result[0]['name'];
+			$this->view->content = $result[0]['body'];
+        }
+        return;
+    }
+    
     public function processAction()
     {
     	Zend_Controller_Front::getInstance()->getParam('auth')->auth(9);
