@@ -1,0 +1,21 @@
+
+<?php 
+	if ($this->table == NULL)
+	{
+		echo "	<p>No Data!</p>";
+	}
+	else
+	{
+?>
+	<table border=0>
+<?php
+	foreach ($this->table as $row) {
+		echo "		<tr>\n";
+			echo "			<td><a href='/page/view?id=".$this->escape($row['ID'])."'>".$this->escape($row['name'])."</a></td>\n";
+		echo "		</tr>\n";
+	}
+?>
+	</table>
+<?php
+	}
+?>

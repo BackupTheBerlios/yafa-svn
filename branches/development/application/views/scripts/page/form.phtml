@@ -1,0 +1,12 @@
+    <h2>Add/Edit a Page</h2>
+    <?php
+        if ($this->msg != '') {
+            echo "<p>" . $this->escape($this->msg) . "</p>";
+        }
+    ?>
+    <form action="/db/process" method="post">
+    	<?php echo $this->formHidden('id', $this->escape($this->id)); ?>
+    	<p>pic: <?php echo $this->formText('name', $this->escape($this->name), array('size' => 50)); ?><br>
+    	<?php echo $this->formTextarea('text', $this->escape($this->content)); ?><br>
+        <?php echo $this->formSubmit('submit'); ?></p>
+    </form>
