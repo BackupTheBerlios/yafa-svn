@@ -1,7 +1,9 @@
-
+	
 <?php
 	require_once ('_pageing.phtml');
 	require_once ('_table.phtml');
+	
+	echo "<h2>" . $this->escape($this->ControllerName) . "</h2>";
 	
 	printTable($this->data, $this->fields, $this, true);
 

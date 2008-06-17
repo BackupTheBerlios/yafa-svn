@@ -7,12 +7,14 @@ require_once '../application/menu.php';
 require_once 'Zend/Controller/Front.php';
 require_once 'Zend/Controller/Router/Rewrite.php';
 require_once 'Zend/Config.php';
+require_once 'Classes/Layout.php';
 require_once '../MP/Auth.php';
 
 $front = Zend_Controller_Front::getInstance();
 $front->setParam('config', new Zend_Config($configArray))
       ->setControllerDirectory($front->getParam('config')->BasePath . '/application/controllers')
       ->setRouter(new Zend_Controller_Router_Rewrite())
+      ->registerPlugin(new Layout())
       ->setParam('auth', new MP_Auth());
 
 $db = Zend_Db::factory($front->getParam('config')->database);
