@@ -1,9 +1,0 @@
-RewriteEngine on
-RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php
-
-AuthType Basic
-AuthName "Restricted Access"
-
-AuthBasicProvider file
-AuthUserFile /media/data2/www/images/passwd
-Require valid-user
