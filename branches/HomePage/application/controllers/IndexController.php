@@ -8,7 +8,7 @@ class IndexController extends CrudController_Abstract
 	// String with the Name of the Model Class, parameter to getTableFromObjectString()
 	// Configuration Variable.
 	// Will be replace by auto detection based on class name
-	public $_modelname = "CRUD";
+	public $_modelname = "Index";
 	
 	// Number of records shown on one page
 	// Configuration Variable.

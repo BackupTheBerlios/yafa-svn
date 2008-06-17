@@ -3,13 +3,13 @@
 
 	function getTableFromObjectString($objectstring) {
 	   	switch ( strtolower($objectstring) ) {
-	   		case "crud":
-	   			$table = new Crud();
+	   		case "index":
+	   			$table = new Index();
 	   			break;	   			
 	   	}
 	   	return $table;
 	}
 
-	require_once 'Crud.php';
+	require_once 'Index.php';
 		
 ?>

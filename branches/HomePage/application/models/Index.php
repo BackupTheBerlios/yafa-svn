@@ -1,7 +1,7 @@
 <?php
 
-class Crud extends MP_Zend_Db_Table_Abstract{
-	protected $_name = 'Crud';
+class Index extends MP_Zend_Db_Table_Abstract{
+	protected $_name = 'Index';
 	
 	protected $_structure = array(
 								"id" => array("ID", "integer"),

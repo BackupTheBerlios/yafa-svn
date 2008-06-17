@@ -21,32 +21,11 @@ USE `yafa`;
 -- Table structure for table `Crud`
 --
 
-CREATE TABLE IF NOT EXISTS `Crud` (
+CREATE TABLE IF NOT EXISTS `Index` (
   `ID` int(11) unsigned NOT NULL auto_increment,
   `name` varchar(255),
   `body` varchar(255),
   PRIMARY KEY  (`ID`),
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `username` varchar(255) NOT NULL,
-  `realname` varchar(255) NOT NULL,
-  `level` tinyint(4) NOT NULL default '0',
-  `mail` varchar(255) NOT NULL,
-  PRIMARY KEY  (`username`),
-  FULLTEXT KEY `mail` (`mail`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-INSERT INTO `users` (`username`, `realname`, `level`, `mail`) VALUES ('admin', 'Admin', 9, 'root@localhost');
 
