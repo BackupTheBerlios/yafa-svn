@@ -1,0 +1,44 @@
+<?php 
+
+function printTable($data, $fields, $_this, $controls = false) {
+	if ($data == NULL)
+	{
+		echo "	<p>No Data!</p>";
+		//print_r($this);
+	}
+	else
+	{
+		echo "	<table border=0>\n";
+		echo "		<tr>\n";
+		foreach ($fields as $field) {
+			if (isset($field[2]) and $field[1] != 'Subtable') {
+				echo "			<th>" . $_this->escape($field[2]) . "</th>\n";
+			}
+		}
+		if ($controls) {
+			echo "			<th>Actions</th>\n";
+		}
+		echo "		</tr>\n";
+	
+		foreach ($data as $row) {
+			echo "		<tr>\n";
+			foreach ($fields as $field) {
+				if (isset($field[2]) and $field[1] != 'Subtable') {
+					echo "			<td valign='top'>" . $_this->escape($row[$field[0]]) . "</td>\n";
+				}
+			}
+			if ($controls) {
+				echo "			<td valign='top'>";
+				echo "<a href='/" . $_this->escape($_this->ControllerName) . "/show?ID=".$_this->escape($row['ID'])."'>show</a> ";
+				echo "<a href='/" . $_this->escape($_this->ControllerName) . "/edit?ID=".$_this->escape($row['ID'])."'>edit</a> ";
+				echo "<a href='/" . $_this->escape($_this->ControllerName) . "/delete?ID=".$_this->escape($row['ID'])."'>delete</a> ";
+				echo "</td>\n";
+			}
+			echo "		</tr>\n";
+		}
+		echo "	</table>\n";
+	}
+}
+
+?>
+	
