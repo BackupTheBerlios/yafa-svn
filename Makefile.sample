@@ -1,2 +1,0 @@
-all:
-	@rsync -av --exclude='.svn' branches/development/* <path-to-your-testservers-doc-root>

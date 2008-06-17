@@ -1,9 +1,0 @@
-RewriteEngine on
-RewriteRule ^/(.*) /html/$1
-RewriteRule !\.(js|ico|gif|jpg|png|css)$ index.php
-
-AuthType Digest
-AuthName "Restricted Access"
-AuthDigestDomain /
-AuthUserFile /home/groups/yafa/htdocs/digest
-Require valid-user
