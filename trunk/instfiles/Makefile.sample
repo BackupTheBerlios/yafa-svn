@@ -1,0 +1,2 @@
+all:
+	@rsync -aAv --exclude='.svn' --exclude='instfiles' ./ <path-to-your-testservers-doc-root>
