@@ -1,0 +1,28 @@
+    <?php
+        if ($this->msg != '') {
+            echo "<p>" . $this->escape($this->msg) . "</p>";
+        }
+    ?>
+    <form action="/<?php echo $this->escape($this->ControllerName); ?>/process" method="post">
+    <?php
+    foreach ($this->fields as $field) {
+    	if ( isset($field[2]) ) {
+    		switch ($field[1]) {
+			case "integer":
+   				echo "<p><span class='form-lable'>" . $field[2] . ":</span> " . $this->formText( $field[0], $this->escape($this->data[$field[0]]), array('size' => 70) ) . "</p>";
+   				break;
+   			case "string":
+   				echo "<p><span class='form-lable'>" . $field[2] . ":</span> " . $this->formText( $field[0], $this->escape($this->data[$field[0]]), array('size' => 70) ) . "</p>";
+   				break;
+   			case "text":
+   				echo "<p><span class='form-lable'>" . $field[2] . ":</span> <br>" . $this->formTextarea( $field[0], $this->escape($this->data[$field[0]]) ) . "</p>";
+   				break;
+    		}
+		}
+		else {
+			echo $this->formHidden( $field[0], $this->escape($this->data[$field[0]]) );
+    	}
+	}
+	echo "<p>" . $this->formSubmit('submit', 'Save') . " <a href=\"/" . $this->escape($this->ControllerName) . "\">Back</a></p>";
+    ?>
+    </form>

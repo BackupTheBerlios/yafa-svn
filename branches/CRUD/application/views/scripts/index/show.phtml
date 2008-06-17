@@ -1,0 +1,21 @@
+<?php require_once ('_table.phtml'); ?>
+    <h1><?php echo $this->escape($this->ControllerName); ?></h1>
+    <?php
+//	print_r($this->fields);
+//    print_r ($this->data);
+	foreach ($this->fields as $field) {
+		if (isset($field[2]) ) {
+			if ($field[1] != 'Subtable') {
+				echo "<p><span class='form-label'>" . $field[2] . ":</span> " . $this->escape($this->data[$field[0]]) . "</p>\n";
+			}
+			else {
+				echo "<p><span class='form-label'>" . $field[2] . ":</span><p>";
+				printTable($this->data[$field[0]], $field[3], $this);
+			}
+		}
+	}
+	echo "<a href='/" . $this->escape($this->ControllerName) . "/edit?ID=".$this->escape($this->data['ID'])."'>edit</a> ";
+	echo "<a href='/" . $this->escape($this->ControllerName) . "/delete?ID=".$this->escape($this->data['ID'])."'>delete</a> ";
+	echo "<a href='/" . $this->escape($this->ControllerName) . "'>Back</a> ";
+	?>	    
+	

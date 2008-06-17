@@ -1,0 +1,11 @@
+
+<?php
+	require_once ('_pageing.phtml');
+	require_once ('_table.phtml');
+	
+	printTable($this->data, $this->fields, $this, true);
+
+	pageing($this, $this->page_count, $this->page);
+?>
+	<a href="/<?php echo $this->escape($this->ControllerName); ?>/new">Add a Page</a>
+	
