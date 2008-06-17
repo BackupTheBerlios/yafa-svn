@@ -24,10 +24,10 @@ class Layout extends Zend_Controller_Plugin_Abstract
 	        $response = $this->getResponse();
 	        $view = new Zend_View();
 	        $view->setBasePath(Zend_Controller_Front::getInstance()->getParam('config')->BasePath . '/application/views');
-			$view->menu = Zend_Controller_Front::getInstance()->getParam('menu');
-			$view->realname = Zend_Controller_Front::getInstance()->getParam('auth')->realname;
-			$view->username = Zend_Controller_Front::getInstance()->getParam('auth')->username;
-	    	$view->level = Zend_Controller_Front::getInstance()->getParam('auth')->level;
+//			$view->menu = Zend_Controller_Front::getInstance()->getParam('menu');
+//			$view->realname = Zend_Controller_Front::getInstance()->getParam('auth')->realname;
+//			$view->username = Zend_Controller_Front::getInstance()->getParam('auth')->username;
+//	    	$view->level = Zend_Controller_Front::getInstance()->getParam('auth')->level;
 			
 	        $response->prepend('header', $view->render('header.phtml'));
     	}

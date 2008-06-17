@@ -34,7 +34,7 @@ class CrudController_Abstract extends Zend_Controller_Action
 	
     public function indexAction()
     {
-    	Zend_Controller_Front::getInstance()->getParam('auth')->auth(1);
+//    	Zend_Controller_Front::getInstance()->getParam('auth')->auth(1);
     	// All
 		$this->view->page = $this->_getParam('page', 1);;		
     	$this->view->page_count = ceil($this->_table->count() / $this->_page_length);;
@@ -45,26 +45,26 @@ class CrudController_Abstract extends Zend_Controller_Action
 
     public function newAction()
     {
-		Zend_Controller_Front::getInstance()->getParam('auth')->auth(3);
+//		Zend_Controller_Front::getInstance()->getParam('auth')->auth(3);
     }
 
 	public function editAction()
 	{
-    	Zend_Controller_Front::getInstance()->getParam('auth')->auth(3);
+//    	Zend_Controller_Front::getInstance()->getParam('auth')->auth(3);
     	
 		$this->view->data = $this->_table->GetArrayOne( $this->_getParam('ID', 0) );
    	}
 	
 	public function showAction()
 	{
-		Zend_Controller_Front::getInstance()->getParam('auth')->auth(1);
+//		Zend_Controller_Front::getInstance()->getParam('auth')->auth(1);
 		
 		$this->view->data = $this->_table->GetArrayOne( $this->_getParam('ID', 0) );
 	}
 	
 	public function deleteAction()
 	{
-		Zend_Controller_Front::getInstance()->getParam('auth')->auth(5);
+//		Zend_Controller_Front::getInstance()->getParam('auth')->auth(5);
 		
 		$ID = 	$this->_getParam('ID', 0);
 		if ($ID != 0) {
@@ -77,7 +77,7 @@ class CrudController_Abstract extends Zend_Controller_Action
 	
 	public function processAction()
 	{
-    	Zend_Controller_Front::getInstance()->getParam('auth')->auth(3);
+//    	Zend_Controller_Front::getInstance()->getParam('auth')->auth(3);
     	
         $ID = 	$this->_getParam('ID', 0);
         $this->view->data = array();
