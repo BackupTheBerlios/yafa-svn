@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `Index` (
   `ID` int(11) unsigned NOT NULL auto_increment,
   `name` varchar(255),
   `body` varchar(255),
-  PRIMARY KEY  (`ID`),
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ;
 
 

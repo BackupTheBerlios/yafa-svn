@@ -21,6 +21,7 @@ class CrudController_Abstract extends Zend_Controller_Action
 	
 	public function init()
 	{
+		Zend_Controller_Front::getInstance()->getParam('log')->debug("CrudController_Abstract::init()");
 		$this->_table = getTableFromObjectString($this->_modelname);
 		$this->view->ControllerName = $this->_getParam('controller', '');;
 		$this->_fields = $this->_table->getStructure();
