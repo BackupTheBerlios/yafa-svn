@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+/*
+	CSS		HTML
+	#name	id="name"
+	.name	class="name"
+	h1		<h1>
+*/
+
+.content-table {
+	border:thin solid black;
+	border-spacing: 0px;
+}
+
+.content-table th {
+	vertical-align: top;
+	text-align: left;
+	border:thin solid black;
+	padding: 1px;
+}
+
+.content-table td {
+	vertical-align: top;
+	text-align: left;
+	border:thin solid black;
+	padding: 2px;
+}
+

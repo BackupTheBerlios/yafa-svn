@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+/*
+	CSS		HTML
+	#name	id="name"
+	.name	class="name"
+	h1		<h1>
+*/
+
+.header-search {
+	text-align: right;
+	vertical-align: bottom; 
+	margin: 0px;
+	padding-top: 10px;
+}
+
+#header-search-all {
+
+}
+
+#header-search-type {
+	
+}
+
+.header-search-box {
+	
+}
+
+header-search-button {
+	
+}

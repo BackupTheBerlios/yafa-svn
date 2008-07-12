@@ -8,14 +8,8 @@ body {
 }
 
 #container {
-  width: 600px;
+  width: 95%;
   margin: 0 auto;
-}
-#header {
-  background-color: #006999;
-  padding: 10px;
-  color: #fff;
-  text-align: center;
 }
 #content {
   border: 2px solid #006999;
@@ -35,6 +29,7 @@ h2 {
   font-size: 1.25em;
   margin-bottom: 0.5em;
 }
+
 .flash {
   border: 1px solid #000;
   padding: 0.2em
@@ -49,17 +44,17 @@ h2 {
   color: #990A0C;
   background-color: #FFA894;
 }
+
 label {
   display: block;
 }
+
+.form-label {
+	font-weight: bold;
+}
+
 #newForm {
   margin: 1em 0;
   padding: 0.5em;
   background-color: #E7E7E7;
-}
-input {
-  margin: 0.5em 0;
-}
-input[type="submit"] {
-  margin-top: 2em;
 }

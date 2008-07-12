@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+/*
+	CSS		HTML
+	#name	id="name"
+	.name	class="name"
+	h1		<h1>
+*/
+
+#header {
+  background-color: #006999;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+#header h1,
+#header a {
+	color: white;
+	text-decoration: none;
+}

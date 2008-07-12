@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+/*
+	CSS		HTML
+	#name	id="name"
+	.name	class="name"
+	h1		<h1>
+*/
+
+.header-status {
+	text-align: right;
+	vertical-align: top; 
+	margin: 0;
+	font-size: 0.75em;
+}
+
+.header-status a {
+	color: white;
+	text-decoration: none;
+}
